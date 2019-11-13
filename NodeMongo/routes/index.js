@@ -7,27 +7,21 @@ const router = express.Router();
 
 //SEND: enviar texto
 //JSON: eviar objeto json
+
 router.get('/', (req, res)=>{
-    // let nome = req.query.nome;
-    // let sobrenome = req.query.sobrenome;
+    let obj = {
+        nome:req.query.nome,
+        idade: req.query.idade,
+        mostrar:true,
+        ingredientes:[
+            {nome: 'Arroz', qt:'20g'},
+            {nome: 'Macarrao', qt:'100g'}
+        ] 
+    };
 
-    // res.json({nomeCompleto: nome+' '+sobrenome});
-
-    res.json(req.query);
+    res.render('home',obj);
 });
 
-router.get('/posts/:id/:slug', (req, res)=>{
-    let id = req.params.id;
-    let slug = req.params.slug;
-    let nome = req.params.nome;
-    let sobrenome = req.params.sobrenome;
 
-   
-    res.send('ID: '+ id +' slug: '+slug);
-});
-
-router.get('/sobre', (req, res)=>{
-    res.send('SOBRE');
-});
 
 module.exports = router;

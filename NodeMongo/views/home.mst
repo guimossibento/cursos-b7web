@@ -1,0 +1,15 @@
+<title>aoba</title>
+<h1> Seja bem vindo(a)</h1>
+
+{{#mostrar}}
+<div> Nome: {{nome}} - {{idade}}</div>
+{{/mostrar}}
+
+<h2 style="text-align:left;"> In gredientes</h2>
+<div style="align:center;">
+<ul>
+{{#ingredientes}}
+    <li>{{nome}} - {{qt}}</li>
+{{/ingredientes}}
+</ul>
+</div>
